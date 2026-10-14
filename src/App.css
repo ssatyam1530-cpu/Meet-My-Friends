@@ -1,0 +1,158 @@
+/* App.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Main section */
+
+.section {
+  padding: 70px 24px;
+}
+
+.classes {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8faff 0%, #eef3ff 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section heading */
+
+.section_title {
+  margin-bottom: 10px;
+  color: #172554;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 750;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.section_subtitle {
+  max-width: 650px;
+  margin: 0 auto 42px;
+  color: #64748b;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Classes grid */
+
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+
+.student-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+
+.student-card h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #0f172a;
+}
+
+.student-card p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.98rem;
+}
+
+.student-card strong {
+  color: #1e293b;
+}
+
+.student-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(37, 99, 235, 0.12);
+}
+
+/* Responsive tablet layout */
+
+@media (max-width: 950px) {
+  .classes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .section {
+    padding: 55px 20px;
+  }
+}
+
+/* Responsive mobile layout */
+
+@media (max-width: 600px) {
+  .classes-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section {
+    padding: 42px 16px;
+  }
+
+  .section_subtitle {
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+
+  .section_title {
+    font-size: 30px;
+  }
+}
+
+/* Optional styling for elements inside ClassCard */
+
+.classes-grid > * {
+  min-width: 0;
+}
+
+.classes-grid > *:hover {
+  transform: translateY(-5px);
+}
+
+.classes-grid > * {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
